@@ -1,0 +1,22 @@
+{
+    "read_files": "[ 2018_09_05_ADAR_Quads/filtered_and_trimmed_and_rrna_removed/S2_Quad_Brain_1.fq.trim.norrna.gz, 2018_09_05_ADAR_Quads/filtered_and_trimmed_and_rrna_removed/S2_Quad_Brain_2.fq.trim.norrna.gz]",
+    "expected_format": "ISR",
+    "compatible_fragment_ratio": 1.0,
+    "num_compatible_fragments": 24562683,
+    "num_assigned_fragments": 24562683,
+    "num_frags_with_concordant_consistent_mappings": 23672993,
+    "num_frags_with_inconsistent_or_orphan_mappings": 940423,
+    "strand_mapping_bias": 0.00004017074636993312,
+    "MSF": 0,
+    "OSF": 0,
+    "ISF": 951,
+    "MSR": 0,
+    "OSR": 0,
+    "ISR": 23672993,
+    "SF": 433323,
+    "SR": 506149,
+    "MU": 0,
+    "OU": 0,
+    "IU": 0,
+    "U": 0
+}

@@ -1,0 +1,13 @@
+{
+    "salmon_version": "1.6.0",
+    "libType": "A",
+    "index": "/mnts/indicies/genomes_alistair/gencode.vM28/mm11.gencode.vM28",
+    "mates1": "2018_09_05_ADAR_Quads/filtered_and_trimmed_and_rrna_removed/S2_Quad_Brain_1.fq.trim.norrna.gz",
+    "mates2": "2018_09_05_ADAR_Quads/filtered_and_trimmed_and_rrna_removed/S2_Quad_Brain_2.fq.trim.norrna.gz",
+    "output": "example_data/S2_Quad_Brain_salmon_1.6.0_vm28",
+    "gcBias": [],
+    "seqBias": [],
+    "validateMappings": [],
+    "threads": "20",
+    "auxDir": "aux_info"
+}
