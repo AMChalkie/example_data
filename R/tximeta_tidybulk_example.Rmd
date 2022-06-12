@@ -1,0 +1,53 @@
+---
+title: "example_tximeta_tidybulk"
+author: "Alistair Chalk"
+date: "12/06/2022"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+
+# Latest restfulr causes tximeta to fail
+download.file(
+  "https://mran.microsoft.com/snapshot/2018-06-19/src/contrib/restfulr_0.0.13.tar.gz", 
+  "restfulr"
+)
+install.packages("restfulr", repos = NULL, type = "source")
+
+
+#library(restfulr)
+#library(GenomicFeatures)
+
+```
+
+# Test 1
+
+Load salmon data using tximeta.
+
+```{r test1}
+library(tximeta)
+library(tidybulk)
+library(tidyverse)
+
+coldata <- data.frame(files=c("S1_Quad_Brain_salmon_1.6.0_vm28/quant.sf","S1_Quad_Brain_salmon_1.6.0_vm28/quant.sf"),names=c("S1","S2"),condition=c("A","B"))
+se <- tximeta(coldata)
+se
+
+class(se)
+# RangedSummarizedExperiment
+# SummarizedExperiment
+
+# couldn't find matching transcriptome, returning non-ranged SummarizedExperiment
+counts_scaled <- se %>% tidybulk() %>% aggregate_duplicates() %>%  identify_abundant(factor_of_interest = condition) %>% scale_abundance()
+
+gse <-  tximeta::summarizeToGene(se, countsFromAbundance="lengthScaledTPM")
+class(gse)
+# RangedSummarizedExperiment
+# SummarizedExperiment
+gse
+
+counts_scaled <- gse %>% tidybulk() %>% aggregate_duplicates() %>%  identify_abundant(factor_of_interest = condition) %>% scale_abundance()
+
+```
+
